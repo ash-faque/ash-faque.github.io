@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1{
+    margin: 15px auto;
+    font-size: xx-large;
+}
+h2{
+    margin: 10px auto;
+}
+
+p{
+    text-indent: 50px;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+a:any-link{
+    color: black;
+    text-decoration: none;
+}
+/* basics are over */
+
+
+
+
+nav img{
+    width: 100px;
+}
+nav div{
+    margin: 20px;
+}
+
+main{
+    width: clamp(240px, 100%, 640px);
+    margin: 0 auto;
+}
+
+
+
+/* social links */
+#social_wrap{
+    margin-top: 30px;
+    text-align: center;
+}
+#social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#social a:any-link{
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: clamp(100px, 50%, 200px)
+}
+/* footer shit */
+footer{
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+}
+footer em{
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
