@@ -8,15 +8,18 @@
 
 body{
     text-align: center;
-    padding: 60px 20px;
-    transition: 10s ease;
-    background-color: hsl(210, 20%, 80%);
-    color: #222222;
+    transition: background 1s ease;
+    background-color: hsl(159, 20%, 80%);
+    color: #0f0f0f;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 h1:first-child{
     font-size: 100px;
-    filter: drop-shadow(0 0 30px #e4dede);
+    filter: drop-shadow(0 0 50px #ffce6b);
 }
 h1{
     margin: 15px auto;
@@ -44,8 +47,12 @@ a:any-link{
 /* basics are over */
 
 
-
-
+/* nav bar */
+nav{
+    width: 100vw;
+    padding: 30px 20px;
+    background-color: #22222216;
+}
 nav img{
     width: 100px;
 }
@@ -53,16 +60,18 @@ nav div{
     margin: 20px;
 }
 
-main{
-    width: clamp(240px, 100%, 640px);
-    margin: 0 auto;
-}
 
+/* main content */
+main{
+    width: 50vw;
+    padding: 20px;
+}
 
 
 /* social links */
 #social_wrap{
-    margin-top: 30px;
+    width: 40vw;
+    padding: 20px;
     text-align: center;
 }
 #social{
@@ -78,10 +87,22 @@ main{
     margin-top: 10px;
     width: clamp(100px, 50%, 200px)
 }
+@media (orientation: portrait){
+    body{
+        flex-direction: column;
+    }
+    main, #social_wrap{
+        width: 100vw;
+    }
+}
+
+
+
 /* footer shit */
 footer{
-    margin-top: 30px;
-    padding: 20px;
+    width: 100vw;
+    padding: 30px 20px;
+    background-color: #22222216;
     text-align: center;
 }
 footer em{

@@ -19,7 +19,7 @@ const alterBg = (elm, intervl = 1) => {
     setInterval(() => {
         let random_color = `hsl(${hue}, 20%, 80%)`
         elm.style.backgroundColor = random_color
-        hue > 359 ? hue = 0 : hue ++
+        hue > 359 ? hue = 0 : hue += 6
     }, intervl * 1000)
 }
 alterBg(body, 1)
