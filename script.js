@@ -11,3 +11,6 @@ const appendSocials = (socials, socials_div) => {
     });
 }
 appendSocials(socials, socials_div)
+
+import current_comic from './xkcd.js'
+current_comic(document.getElementById('comic'))

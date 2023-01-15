@@ -1,19 +1,19 @@
 body{
     width: 100vw;
     height: 100vh;
-    padding: 20px;
+    padding: 30px 20px;
     margin: 0;
     box-sizing: border-box;
-    background-color: #e0e7d1;
-    color: #161616;
 }
 
 nav, 
 main,
 footer{
-    padding: 15px;
     width: clamp(240px, 100%, 520px);
-    margin: 10px auto;
+    margin: 20px auto;
+}
+nav img{
+    width: 100px;
 }
 
 main div p{
@@ -24,16 +24,18 @@ main div p{
 }
 
 
-#social_wrap a:any-link{
+#social_wrap{
+    text-align: center;
+} 
+#social a:any-link{
     display: block;
-    padding: 10px 0;
-    margin: 15px 0;
-    width: 60%;
+    padding: 5px 10px;
+    margin: 10px auto;
     text-align: center;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 6px;
     box-shadow: 2px 2px #000;
     text-decoration: none;
-    background-color: #e8e3d2;
     color: #000;
+    font-weight: 900;
 }
