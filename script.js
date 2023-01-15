@@ -3,11 +3,7 @@ const socials_div = document.getElementById('social');
 const appendSocials = (socials, socials_div) => {
     socials.forEach(social => {
         let [platform_name, link] = social
-        let a = document.createElement('a')
-        a.setAttribute('href', link)
-        a.innerText = platform_name
-        a.setAttribute('target', "_blank")
-        socials_div.appendChild(a)
+        socials_div.innerHTML += `<a href="${link}" target="_blank">${platform_name}</a>`;
     });
 }
 appendSocials(socials, socials_div)

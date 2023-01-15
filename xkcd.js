@@ -1,6 +1,6 @@
 export default async (target) => {
 
-    let json_response = await fetch("https://xkcd.com/info.0.json", {mode: 'no-cors'})
+    let json_response = await fetch("https://xkcd.vercel.app/?comic=latest")
     
     console.log(json_response)
 
@@ -32,14 +32,11 @@ export default async (target) => {
         day
     )
 
-    let div = document.createElement('div')
-    div.innerHTML = `
-    <i>mg src="${img}" alt="${alt}">
-    <h3><a link="${link}" target="_blank">${title}</a></h3>
-    <h4>${safe_title}</h4>
-    <p>num: ${num} | date: <em>${day}:${month}:${year}</em></p>
-    <p>${transcript}</p>
-    <p>news: ${news}</p>
-    `
-    target.appendChild(div)
+    target.innerHTML += `
+        <img src="${img}" alt="${alt}">
+        <h4>${safe_title ? safe_title : itle }</h4>
+        <p><b>${num}</b> - <em>${day}:${month}:${year}</em></p>
+        <p>${transcript}</p>
+        <p>${news}</p>
+        <a href="${link}" target="_blank">see @ xkcd</a>`;
 }
