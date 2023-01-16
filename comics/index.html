@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xkcd-comics</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 10px;
+        }
+        .comic{
+            margin-top: 30px;
+            border: 1px solid #000;
+            box-shadow: 2px 2px #5c5c5c;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .comic img{
+            width: 100%;
+        }
+        .comic_detail{
+            padding: 10px;
+        }
+        button{
+            display: block;
+            padding: 10px;
+            border: 1px solid #000;
+            box-shadow: 2px 2px #5d5d5d;
+            border-radius: 5px;
+            width: 100%;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="comics">
+        <h1><a href="http://xkcd.com">>></a>xkcd comics</h1>
+    </div>
+    <button>comics++</button>
+    <script type="module">
+        import current_comic from '../xkcd.js'
+        const seen = []
+        const generate_number = () => {
+            let number = Math.floor(Math.random() * 1000);
+            console.log(number)
+            if (seen.indexOf(number) !== -1) generate_number()
+            return number
+        }
+        const comics_div = document.getElementById('comics');
+        const another_one = () => {
+            current_comic(comics_div, generate_number())
+        }
+        another_one()
+        document.querySelector('button').onclick = another_one
+    </script>
+</body>
+</html>
