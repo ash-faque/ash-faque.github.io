@@ -37,6 +37,6 @@ export default async (target) => {
         <h4>${safe_title ? safe_title : itle }</h4>
         <p><b>${num}</b> - <em>${day}:${month}:${year}</em></p>
         <p>${transcript}</p>
-        <p>${news}</p>
-        <a href="${link}" target="_blank">see @ xkcd</a>`;
+        <p>${news}</p>`;
+    if (link.length) target.innerHTML += `<a href="${link}" target="_blank">@xkcd</a>`
 }

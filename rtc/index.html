@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shafq-rtc</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div id="userInfo">
+        <p>Total users: <b id="users_count"></b></p>
+        <marquee id="users"></marquee>
+    </div>
+
+    <div id="chatList"></div>
+
+    <form id="messageForm">
+        <input type="text" name="message" required
+        autocomplete="off"
+        placeholder="message here" id="message">
+        <button type="submit">send</button>
+    </form>
+
+    <script src="./piesocket.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
