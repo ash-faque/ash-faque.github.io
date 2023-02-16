@@ -1,23 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Gentium+Book+Plus&display=swap');
+/* 
+font-family: 'Crimson Text', serif;
+font-family: 'Gentium Book Plus', serif;
+*/
+
 body{
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    --lg: linear-gradient(45deg, #e4c0e2 30%, #bed9e8);
+    background: #bcdeff;
 }
-
 
 nav,
 footer{
-    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    background: #dededed6;
+    background: var(--lg);
+    color: #000000;
 }
-nav img{
-    margin-top: 50px;
+nav{
+    font-family: 'Gentium Book Plus', serif;
+}
+nav > h1{
+    font-size: 2rem;
+    margin: 5px auto;
+}
+nav > img{
     width: 80px;
 }
 
@@ -25,9 +37,11 @@ nav img{
 main{
     width: 100%;
     padding: 20px;
+    font-family: 'Crimson Text', serif;
 }
 main div{
     margin: 20px auto;
+    background:  var(--lg);
     border: 0.1px solid #000;
     padding: 10px;
     border-radius: 5px;
@@ -45,11 +59,17 @@ main div{
     margin: 10px 0;
     text-align: center;
     text-decoration: none;
-    font-weight: 100;
-    border: 1px solid black;
+    border: 2px solid black;
     box-shadow: 2px 2px #5c5c5c;
+    background-color: #cdcdcd3f;
     color: #000;
-    border-radius: 6px;
+    border-radius: 2px;
+}
+#social a:any-link:hover{
+    transition: 200ms;
+    background-color: #546177;
+    color: #ffffff;
+    border-radius: 8px;
 }
 
 
@@ -61,6 +81,7 @@ aside{
 aside > div{
     margin: 20px auto;
     border: 0.1px solid #000;
+    background:  var(--lg);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 2px 2px #5c5c5c;
