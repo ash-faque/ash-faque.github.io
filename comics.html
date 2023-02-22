@@ -11,7 +11,9 @@
             padding: 10px;
         }
         .comic{
+            margin: 0 auto;
             margin-top: 30px;
+            width: clamp(240px, 100%, 480px);
             border: 1px solid #000;
             box-shadow: 2px 2px #5c5c5c;
             border-radius: 5px;
@@ -24,27 +26,27 @@
             padding: 10px;
         }
         button{
+            width: clamp(240px, 80%, 480px);
+            margin: 10px auto;
             display: block;
             padding: 10px;
             border: 1px solid #000;
             box-shadow: 2px 2px #5d5d5d;
             border-radius: 5px;
-            width: 100%;
-            margin: 10px auto;
         }
     </style>
 </head>
 <body>
     <div id="comics">
-        <h1><a href="http://xkcd.com">>></a>xkcd comics</h1>
+        <h1><a href="http://xkcd.com">>></a> &nbsp; xkcd comics</h1>
     </div>
-    <button>comics++</button>
+    <button>comics &nbsp; + &nbsp; +</button>
     <script type="module">
         import current_comic from '../xkcd.js'
         const seen = []
         const generate_number = () => {
             let number = Math.floor(Math.random() * 1000);
-            console.log(number)
+            console.log("Generated random number:", number)
             if (seen.indexOf(number) !== -1) generate_number()
             return number
         }
