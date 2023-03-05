@@ -4,6 +4,12 @@ font-family: 'Crimson Text', serif;
 font-family: 'Gentium Book Plus', serif;
 */
 
+
+*{
+    user-select: none;
+}
+
+
 body{
     display: flex;
     flex-wrap: wrap;
@@ -27,9 +33,11 @@ nav{
     justify-content: center;
 }
 nav > img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
     border-radius: 50%;
+    border: 1px solid #2a2a2a;
     object-fit: contain;
     overflow: hidden;
 }
@@ -71,8 +79,8 @@ main div{
     border: 1px solid #000;
 }
 #social a:any-link:hover{
-    transition: 500ms;
-    background: #4e4e66;
+    transition: 100ms;
+    background: #343444;
     color: #fff;
 }
 
@@ -87,15 +95,24 @@ aside > div{
     padding: 10px;
 }
 /* comic style */
-aside #comic *{
+aside #a_comic *{
     margin: 0;
 }
-aside #comic img{
+aside #a_comic img{
     margin: 10px auto;
     width: 100%;
 }
 
 
+
+div em{
+    background-color: #e0e0f6;
+    padding: 0 5px;
+    font-size: small;
+}
+footer{
+    font-size: smaller  ;
+}
 
 @media (orientation: landscape) {
     main{
