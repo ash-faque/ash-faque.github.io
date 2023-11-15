@@ -39,8 +39,8 @@ nav {
   justify-content: center;
 }
 nav > img {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   margin-right: 20px;
   border-radius: 50%;
   border: 1px solid #2a2a2a;
