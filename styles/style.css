@@ -58,6 +58,9 @@ nav > div > * {
   margin: 0;
   text-align: left;
 }
+nav > div > h1 {
+  font-size: larger;
+}
 
 main {
   width: 100%;
