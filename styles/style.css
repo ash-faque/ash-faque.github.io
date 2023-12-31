@@ -1,27 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Agbalumo");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Poppins&display=swap');
 
 * {
   user-select: none;
 }
 
 html {
-  background-color: #00000013;
+  background-color: #cfcccc;
 }
 
 body {
+  font-family: 'Poppins';
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
   margin: 0 auto;
   padding: 50px 0;
-  background: rgb(234, 238, 239);
+  background: rgb(225, 225, 225);
   background: linear-gradient(
     60deg,
-    rgba(207, 152, 227, 0.548) 0%,
-    rgba(175, 125, 157, 0.59) 100%
+    rgba(224, 225, 245, 0.881) 0%,
+    rgba(228, 239, 247, 0.858) 100%
   );
-  width: clamp(240px, 100%, 840px);
+  width: clamp(240px, 100%, 1080px);
 }
 
 nav,
@@ -31,27 +32,21 @@ footer {
   text-align: center;
 }
 nav {
-  margin-top: 50px;
-  font-family: "Agbalumo", serif;
+  font-family: 'Kanit';
+  margin: 0 20px;
   font-size: x-large;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 nav > img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
   margin-right: 20px;
-  border-radius: 50%;
+  border-radius: 15%;
   border: 1px solid #2a2a2a;
   object-fit: contain;
   overflow: hidden;
   transition: 200ms;
-}
-nav > img:hover {
-  transition: 200ms;
-  scale: 1.1;
-  transform: rotateZ(-15deg);
 }
 nav > div {
   height: 100%;
@@ -75,12 +70,10 @@ main div {
 /* about */
 #about p {
   text-indent: 40px;
-  font-size: large;
-  text-align: left;
+  font-size: medium;
 }
 /* socials */
 #social a:any-link {
-  font-family: monospace;
   display: block;
   padding: 5px 15px;
   margin: 10px 0;
@@ -89,14 +82,12 @@ main div {
   text-decoration: none;
   border: 1px solid #000;
   color: #000;
-  transition: 200ms;
+  transition: 1s;
 }
 #social a:any-link:hover {
-  transition: 200ms;
-  background: #515151;
-  color: #ffffff;
-  font-weight: 900;
-  padding-right: 200px;
+  transition: 3s;
+  background: #949494;
+  text-align: left;
 }
 
 /* aside */
@@ -111,12 +102,13 @@ aside img {
 }
 
 div em {
-  background-color: #b6d2d2;
+  background-color: #ebefefc6;
   padding: 0 5px;
-  font-size: medium;
+  font-size: smaller;
 }
 footer {
   font-size: smaller;
+  font-family: monospace;
 }
 
 @media (orientation: landscape) {
