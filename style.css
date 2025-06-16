@@ -39,7 +39,7 @@ section {
 }
 
 #about a {
-    color: #3498db;
+    color: #1d80c2;
     text-decoration: none;
 }
 
@@ -55,12 +55,12 @@ section {
 }
 
 #social a {
-    color: #2c3e50;
+    color: #1e3144;
     font-size: 1.5rem;
 }
 
 #social a:hover {
-    color: #3498db;
+    color: #1d80c2;
 }
 
 @media (max-width: 600px) {
