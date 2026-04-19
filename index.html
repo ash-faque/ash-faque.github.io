@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashfaque P P — Test Automation Engineer</title>
+    <title>Ashfaque P P — Automotive Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <meta name="google-site-verification" content="Uld2J-caA1P_MYG-SL4Vh_iTNtQ17Y8EinwEkvN6_3I" />
-
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <meta name="google-site-verification" content="Uld2J-caA1P_MYG-SL4Vh_iTNtQ17Y8EinwEkvN6_3I" />
     <style>
         *,
         *::before,
@@ -23,23 +21,34 @@
         }
 
         :root {
-            --bg: #0a0c10;
-            --bg2: #0f1218;
-            --bg3: #141820;
-            --border: rgba(255, 255, 255, 0.07);
-            --border-bright: rgba(255, 255, 255, 0.14);
-            --accent: #00e5ff;
-            --accent2: #7c5cfc;
-            --accent3: #ff6b35;
-            --text: #e8eaf0;
-            --muted: #6b7280;
-            --muted2: #9ca3af;
-            --mono: 'Space Mono', monospace;
-            --sans: 'Sora', sans-serif;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.06);
-            --radius: 12px;
-            --radius-sm: 6px;
+            /* Persian palette */
+            --lapis: #1a3a5c;
+            --lapis-deep: #0e2238;
+            --lapis-mid: #1f4872;
+            --gold: #c9922a;
+            --gold-light: #e8b84b;
+            --gold-pale: #f0d080;
+            --gold-dim: #7a5518;
+            --terracotta: #c45a2a;
+            --terracotta-light: #e07848;
+            --ivory: #f5eed8;
+            --ivory-dark: #e8dfc0;
+            --ivory-deeper: #d4c898;
+            --teal-persian: #0d7a6e;
+            --teal-light: #1aaa99;
+            --crimson: #8b1a2e;
+            --bg: #070f1a;
+            --bg2: #0b1825;
+            --bg3: #0f2035;
+            --text-main: #f0e8d0;
+            --text-muted: #9ab0c8;
+            --text-dim: #5a7a99;
+            --border-gold: rgba(201, 146, 42, 0.25);
+            --border-gold-bright: rgba(201, 146, 42, 0.5);
+            --border-blue: rgba(31, 72, 114, 0.6);
+            --serif: 'Cinzel', serif;
+            --body: 'Crimson Pro', serif;
+            --mono: 'JetBrains Mono', monospace;
         }
 
         html {
@@ -48,297 +57,566 @@
 
         body {
             background: var(--bg);
-            color: var(--text);
-            font-family: var(--sans);
-            font-size: 16px;
-            line-height: 1.7;
+            color: var(--text-main);
+            font-family: var(--body);
+            font-size: 17px;
+            line-height: 1.75;
             overflow-x: hidden;
         }
 
-        /* Grid background */
+        /* ─── ZELLIGE / GEOMETRIC BACKGROUND PATTERN ─── */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image:
-                linear-gradient(rgba(0, 229, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
             z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cdefs%3E%3Cpattern id='z' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40Z' fill='none' stroke='rgba(201,146,42,0.06)' stroke-width='0.5'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40Z' fill='none' stroke='rgba(201,146,42,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='40' cy='40' r='3' fill='none' stroke='rgba(201,146,42,0.08)' stroke-width='0.5'/%3E%3Cpath d='M0 0 L10 10 M80 0 L70 10 M0 80 L10 70 M80 80 L70 70' stroke='rgba(201,146,42,0.05)' stroke-width='0.5'/%3E%3Cpath d='M40 0 L40 10 M40 70 L40 80 M0 40 L10 40 M70 40 L80 40' stroke='rgba(201,146,42,0.06)' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='80' height='80' fill='url(%23z)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 1;
         }
 
-        /* Glow blobs */
-        .glow-1 {
+        /* Radial vignette + glow */
+        body::after {
+            content: '';
             position: fixed;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 229, 255, 0.06) 0%, transparent 70%);
-            top: -200px;
-            left: -200px;
-            pointer-events: none;
+            inset: 0;
             z-index: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 15% 10%, rgba(26, 58, 92, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 60% at 85% 90%, rgba(196, 90, 42, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 50% 50%, transparent 40%, rgba(7, 15, 26, 0.7) 100%);
+            pointer-events: none;
         }
 
-        .glow-2 {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(124, 92, 252, 0.07) 0%, transparent 70%);
-            bottom: -100px;
-            right: -100px;
-            pointer-events: none;
-            z-index: 0;
+        /* ─── ORNAMENTAL SVG DIVIDER ─── */
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0.5rem 0;
         }
 
-        /* ── NAV ── */
+        .ornament-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .ornament-center {
+            color: var(--gold);
+            font-size: 20px;
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(201, 146, 42, 0.6);
+        }
+
+        /* ─── NAV ─── */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
-            padding: 0 2rem;
-            height: 60px;
+            z-index: 200;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10, 12, 16, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
+            padding: 0 3rem;
+            background: rgba(7, 15, 26, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-gold);
         }
 
-        .nav-logo {
+        .nav-brand {
+            font-family: var(--serif);
+            font-size: 14px;
+            letter-spacing: 0.18em;
+            color: var(--gold-light);
+        }
+
+        .nav-brand span {
+            color: var(--text-muted);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            display: block;
             font-family: var(--mono);
-            font-size: 13px;
-            color: var(--accent);
-            letter-spacing: 0.05em;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            font-size: 13px;
             font-family: var(--mono);
-            color: var(--muted2);
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
             text-decoration: none;
-            letter-spacing: 0.05em;
-            transition: color 0.2s;
+            text-transform: uppercase;
+            transition: color 0.25s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 100%;
+            height: 1px;
+            background: var(--gold);
+            transition: right 0.25s;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--gold-light);
         }
 
-        /* ── WRAPPER ── */
+        .nav-links a:hover::after {
+            right: 0;
+        }
+
+        /* ─── MAIN WRAPPER ─── */
         main {
             position: relative;
             z-index: 1;
         }
 
-        section {
-            padding: 100px 2rem;
-            max-width: 900px;
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 0 2.5rem;
         }
 
-        /* ── HERO ── */
+        /* ─── HERO ─── */
         #hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-top: 120px;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-eyebrow {
+        /* Arch frame — decorative */
+        .arch-frame {
+            position: absolute;
+            top: 60px;
+            right: -80px;
+            width: 420px;
+            height: 560px;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        .hero-kufic {
             font-family: var(--mono);
-            font-size: 12px;
-            color: var(--accent);
-            letter-spacing: 0.2em;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            color: var(--gold);
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             opacity: 0;
-            animation: fadeUp 0.6s 0.1s forwards;
+            animation: riseIn 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-kufic::before {
+            content: '◆ ';
+            color: var(--gold-dim);
+        }
+
+        .hero-kufic::after {
+            content: ' ◆';
+            color: var(--gold-dim);
         }
 
         .hero-name {
-            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-family: var(--serif);
+            font-size: clamp(3.2rem, 7vw, 6rem);
             font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.2rem;
+            line-height: 0.95;
+            letter-spacing: 0.06em;
+            color: var(--ivory);
+            text-shadow: 0 2px 40px rgba(201, 146, 42, 0.2);
             opacity: 0;
-            animation: fadeUp 0.6s 0.25s forwards;
+            animation: riseIn 0.8s 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .hero-name span {
-            color: var(--accent);
+        .hero-name em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-pale));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero-title {
+        .hero-title-bar {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin: 1.5rem 0 1.2rem;
+            opacity: 0;
+            animation: riseIn 0.8s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-title-text {
             font-family: var(--mono);
-            font-size: clamp(0.85rem, 2vw, 1.05rem);
-            color: var(--muted2);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeUp 0.6s 0.4s forwards;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            color: var(--teal-light);
+            text-transform: uppercase;
         }
 
-        .hero-title .sep {
-            color: var(--accent2);
-            margin: 0 0.5rem;
+        .hero-title-sep {
+            color: var(--gold-dim);
+        }
+
+        .htbar-line {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
         }
 
         .hero-desc {
-            font-size: 1.05rem;
-            color: var(--muted2);
-            max-width: 560px;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.85;
             margin-bottom: 2.5rem;
             opacity: 0;
-            animation: fadeUp 0.6s 0.55s forwards;
+            animation: riseIn 0.8s 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .hero-cta {
+        .hero-desc strong {
+            color: var(--ivory);
+            font-weight: 600;
+        }
+
+        .hero-actions {
             display: flex;
-            gap: 1rem;
             flex-wrap: wrap;
+            gap: 1rem;
             opacity: 0;
-            animation: fadeUp 0.6s 0.7s forwards;
+            animation: riseIn 0.8s 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        /* Persian-arch button */
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 22px;
-            border-radius: var(--radius-sm);
-            font-family: var(--mono);
-            font-size: 13px;
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #000;
-            font-weight: 700;
-        }
-
-        .btn-primary:hover {
-            background: #33eeff;
-            transform: translateY(-1px);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--muted2);
-            border: 1px solid var(--border-bright);
-        }
-
-        .btn-ghost:hover {
-            color: var(--text);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 4rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid var(--border);
-            opacity: 0;
-            animation: fadeUp 0.6s 0.85s forwards;
-        }
-
-        .stat-val {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text);
-            font-family: var(--mono);
-            line-height: 1;
-        }
-
-        .stat-val span {
-            color: var(--accent);
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: var(--muted);
-            font-family: var(--mono);
-            letter-spacing: 0.1em;
-            margin-top: 4px;
-        }
-
-        /* ── SECTION HEADERS ── */
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .section-tag {
+            gap: 9px;
+            padding: 11px 26px;
             font-family: var(--mono);
             font-size: 11px;
-            color: var(--accent);
-            letter-spacing: 0.2em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
         }
 
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+            color: var(--lapis-deep);
+            font-weight: 500;
         }
 
-        .section-line {
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--border-bright), transparent);
-        }
-
-        /* ── SKILLS ── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.5rem;
-            transition: border-color 0.2s, transform 0.2s;
-        }
-
-        .skill-card:hover {
-            border-color: rgba(0, 229, 255, 0.2);
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold-pale), var(--gold));
             transform: translateY(-2px);
         }
 
-        .skill-category {
-            font-family: var(--mono);
-            font-size: 10px;
-            color: var(--accent);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
+        .btn-outline {
+            background: transparent;
+            color: var(--text-muted);
+            box-shadow: inset 0 0 0 1px rgba(201, 146, 42, 0.3);
+            clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
         }
 
-        .skill-tags {
+        .btn-outline:hover {
+            color: var(--gold-light);
+            box-shadow: inset 0 0 0 1px var(--gold);
+        }
+
+        /* VS Code Extension CTA */
+        .vscode-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 2rem;
+            padding: 14px 22px 14px 18px;
+            background: rgba(13, 122, 110, 0.1);
+            border: 1px solid rgba(13, 122, 110, 0.4);
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.25s;
+            position: relative;
+            opacity: 0;
+            animation: riseIn 0.8s 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .vscode-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--teal-light), var(--teal-persian));
+        }
+
+        .vscode-cta:hover {
+            background: rgba(13, 122, 110, 0.18);
+            border-color: rgba(26, 170, 153, 0.6);
+            transform: translateX(4px);
+        }
+
+        .vscode-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            background: #007acc;
+            flex-shrink: 0;
+        }
+
+        .vscode-info {
+            flex: 1;
+        }
+
+        .vscode-label {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            color: var(--teal-light);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .vscode-name {
+            font-family: var(--serif);
+            font-size: 14px;
+            color: var(--ivory);
+            letter-spacing: 0.05em;
+        }
+
+        .vscode-sub {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--text-dim);
+        }
+
+        .vscode-arrow {
+            color: var(--teal-light);
+            font-size: 18px;
+            margin-left: auto;
+        }
+
+        /* Stats bar */
+        .hero-stats {
+            display: flex;
+            gap: 0;
+            margin-top: 4rem;
+            border: 1px solid var(--border-gold);
+            background: rgba(26, 58, 92, 0.12);
+            opacity: 0;
+            animation: riseIn 0.8s 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            position: relative;
+        }
+
+        .hero-stats::before,
+        .hero-stats::after {
+            content: '◈';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-dim);
+            font-size: 10px;
+        }
+
+        .hero-stats::before {
+            left: -8px;
+        }
+
+        .hero-stats::after {
+            right: -8px;
+        }
+
+        .stat {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            border-right: 1px solid var(--border-gold);
+            text-align: center;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-family: var(--serif);
+            font-size: 1.9rem;
+            color: var(--gold-light);
+            display: block;
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(201, 146, 42, 0.3);
+        }
+
+        .stat-unit {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--gold-dim);
+        }
+
+        .stat-lbl {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.18em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ─── SECTION TEMPLATE ─── */
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-medallion {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .medallion-num {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: var(--gold-dim);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .medallion-title {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--ivory);
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        .medallion-title em {
+            font-style: normal;
+            color: var(--gold-light);
+        }
+
+        /* ─── SKILLS ─── */
+        #skills {
+            background: linear-gradient(180deg, transparent, rgba(26, 58, 92, 0.08), transparent);
+        }
+
+        .skills-mosaic {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border-gold);
+            border: 1px solid var(--border-gold);
+        }
+
+        .skill-tile {
+            background: var(--bg2);
+            padding: 1.6rem 1.8rem;
+            position: relative;
+            transition: background 0.25s;
+        }
+
+        .skill-tile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .tile-gold::before {
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .tile-teal::before {
+            background: linear-gradient(90deg, transparent, var(--teal-light), transparent);
+        }
+
+        .tile-terra::before {
+            background: linear-gradient(90deg, transparent, var(--terracotta-light), transparent);
+        }
+
+        .tile-crimson::before {
+            background: linear-gradient(90deg, transparent, #c4566a, transparent);
+        }
+
+        .skill-tile:hover {
+            background: rgba(26, 58, 92, 0.25);
+        }
+
+        .skill-tile:hover::before {
+            opacity: 1;
+        }
+
+        .tile-cat {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 0.9rem;
+        }
+
+        .cat-gold {
+            color: var(--gold);
+        }
+
+        .cat-teal {
+            color: var(--teal-light);
+        }
+
+        .cat-terra {
+            color: var(--terracotta-light);
+        }
+
+        .cat-crimson {
+            color: #c4566a;
+        }
+
+        .skill-tile:hover .cat-gold,
+        .skill-tile:hover .cat-teal,
+        .skill-tile:hover .cat-terra,
+        .skill-tile:hover .cat-crimson {
+            text-shadow: 0 0 12px currentColor;
+        }
+
+        .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
@@ -346,727 +624,1523 @@
 
         .tag {
             font-family: var(--mono);
-            font-size: 11px;
+            font-size: 10px;
             padding: 3px 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-bright);
-            border-radius: 3px;
-            color: var(--muted2);
+            border-radius: 1px;
+            border: 1px solid;
+            letter-spacing: 0.08em;
         }
 
-        .tag-accent {
-            border-color: rgba(0, 229, 255, 0.3);
-            color: var(--accent);
+        .tag-g {
+            border-color: rgba(201, 146, 42, 0.25);
+            color: var(--gold-pale);
+            background: rgba(201, 146, 42, 0.06);
         }
 
-        .tag-purple {
-            border-color: rgba(124, 92, 252, 0.3);
-            color: #a78bfa;
+        .tag-t {
+            border-color: rgba(26, 170, 153, 0.25);
+            color: var(--teal-light);
+            background: rgba(26, 170, 153, 0.06);
         }
 
-        .tag-orange {
-            border-color: rgba(255, 107, 53, 0.3);
-            color: #fb923c;
+        .tag-r {
+            border-color: rgba(224, 120, 72, 0.25);
+            color: var(--terracotta-light);
+            background: rgba(224, 120, 72, 0.06);
         }
 
-        /* ── EXPERIENCE ── */
-        .exp-timeline {
+        .tag-c {
+            border-color: rgba(196, 86, 106, 0.25);
+            color: #e07088;
+            background: rgba(196, 86, 106, 0.06);
+        }
+
+        .tag-w {
+            border-color: rgba(200, 200, 200, 0.15);
+            color: var(--text-muted);
+            background: rgba(200, 200, 200, 0.04);
+        }
+
+        @media (max-width: 700px) {
+            .skills-mosaic {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── EXPERIENCE ─── */
+        .exp-arch-container {
             position: relative;
         }
 
-        .exp-timeline::before {
+        .exp-arch-container::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 8px;
-            bottom: 8px;
+            left: 24px;
+            top: 0;
+            bottom: 0;
             width: 1px;
-            background: linear-gradient(180deg, var(--accent), var(--accent2), transparent);
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    var(--gold-dim) 10%,
+                    var(--gold) 30%,
+                    var(--teal-persian) 60%,
+                    var(--terracotta) 80%,
+                    transparent 100%);
         }
 
-        .exp-item {
-            padding-left: 2rem;
-            margin-bottom: 2.5rem;
+        .exp-entry {
+            padding-left: 72px;
+            margin-bottom: 3.5rem;
             position: relative;
         }
 
-        .exp-item::before {
-            content: '';
+        .exp-node {
             position: absolute;
-            left: -4px;
-            top: 8px;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+            left: 10px;
+            top: 6px;
+            width: 29px;
+            height: 29px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .exp-date {
+        .exp-node-diamond {
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 16px rgba(201, 146, 42, 0.7), 0 0 4px rgba(201, 146, 42, 0.4);
+            transition: all 0.25s;
+        }
+
+        .exp-entry:hover .exp-node-diamond {
+            background: var(--gold-pale);
+            box-shadow: 0 0 24px rgba(201, 146, 42, 0.9);
+            transform: rotate(45deg) scale(1.3);
+        }
+
+        .exp-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-period {
             font-family: var(--mono);
-            font-size: 11px;
-            color: var(--muted);
-            letter-spacing: 0.1em;
-            margin-bottom: 0.3rem;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            color: var(--gold-dim);
+            padding-top: 6px;
+            white-space: nowrap;
         }
 
         .exp-role {
-            font-size: 1.05rem;
+            font-family: var(--serif);
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.15rem;
+            color: var(--ivory);
+            letter-spacing: 0.06em;
+            line-height: 1.3;
         }
 
         .exp-company {
             font-family: var(--mono);
-            font-size: 13px;
-            color: var(--accent);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            color: var(--teal-light);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .exp-company::before {
+            content: '◈';
+            color: var(--gold-dim);
+            font-size: 9px;
+        }
+
+        /* Sub-projects inside experience */
+        .sub-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .sub-proj {
+            background: rgba(26, 58, 92, 0.12);
+            border: 1px solid var(--border-blue);
+            border-left: 2px solid var(--gold-dim);
+            padding: 1.25rem 1.5rem;
+            position: relative;
+            transition: border-left-color 0.25s, background 0.25s;
+        }
+
+        .sub-proj:hover {
+            background: rgba(26, 58, 92, 0.22);
+            border-left-color: var(--gold);
+        }
+
+        .sub-proj-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
             margin-bottom: 0.75rem;
         }
 
-        .exp-desc {
-            font-size: 0.9rem;
-            color: var(--muted2);
-            line-height: 1.7;
+        .sub-proj-name {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--gold-light);
+            letter-spacing: 0.04em;
         }
 
-        .exp-bullets {
+        .sub-proj-period {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+        }
+
+        .sub-bullets {
             list-style: none;
-            margin-top: 0.5rem;
         }
 
-        .exp-bullets li {
-            font-size: 0.88rem;
-            color: var(--muted2);
-            padding-left: 1rem;
+        .sub-bullets li {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            padding-left: 1.2rem;
             position: relative;
-            margin-bottom: 0.3rem;
-            line-height: 1.6;
+            margin-bottom: 0.35rem;
+            line-height: 1.65;
         }
 
-        .exp-bullets li::before {
-            content: '›';
+        .sub-bullets li::before {
+            content: '◆';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            top: 0;
+            color: var(--gold-dim);
+            font-size: 7px;
+            top: 7px;
         }
 
-        /* ── PROJECTS / ACHIEVEMENTS ── */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1rem;
+        .sub-bullets li strong {
+            color: var(--ivory);
+            font-weight: 600;
         }
 
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
+        .metric-badge {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 9px;
+            padding: 1px 7px;
+            background: rgba(201, 146, 42, 0.12);
+            border: 1px solid rgba(201, 146, 42, 0.3);
+            color: var(--gold-light);
+            letter-spacing: 0.08em;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        /* ─── FEATURED — VS CODE EXTENSION ─── */
+        #extension {
+            background: linear-gradient(180deg, transparent, rgba(13, 122, 110, 0.05), transparent);
+        }
+
+        .ext-card {
+            border: 1px solid rgba(13, 122, 110, 0.35);
+            background: rgba(7, 15, 26, 0.7);
             position: relative;
             overflow: hidden;
-            transition: border-color 0.2s, transform 0.2s;
-            display: flex;
-            flex-direction: column;
+            padding: 3rem;
         }
 
-        .project-card::before {
+        .ext-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-            opacity: 0;
-            transition: opacity 0.2s;
+            background: linear-gradient(90deg, transparent, var(--teal-light), var(--gold), var(--teal-light), transparent);
         }
 
-        .project-card:hover {
-            border-color: rgba(0, 229, 255, 0.2);
-            transform: translateY(-2px);
+        .ext-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='rgba(13,122,110,0.05)' stroke-width='0.5'/%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
-        .project-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            background: rgba(0, 229, 255, 0.1);
-            border: 1px solid rgba(0, 229, 255, 0.2);
+        .ext-inner {
             display: flex;
+            gap: 3rem;
             align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            margin-bottom: 1rem;
-        }
-
-        .project-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-desc {
-            font-size: 0.85rem;
-            color: var(--muted2);
-            line-height: 1.65;
-            flex: 1;
-        }
-
-        .project-stack {
-            display: flex;
             flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 1rem;
-        }
-
-        .project-stack .tag {
-            font-size: 10px;
-        }
-
-        /* ── STANDARDS/CERTS ── */
-        .standards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 0.75rem;
-        }
-
-        .standard-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 0.9rem 1.1rem;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-sm);
-            font-family: var(--mono);
-            font-size: 12px;
-            color: var(--muted2);
-            transition: border-color 0.2s;
-        }
-
-        .standard-item:hover {
-            border-color: rgba(124, 92, 252, 0.3);
-            color: var(--text);
-        }
-
-        .standard-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .dot-cyan {
-            background: var(--accent);
-            box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
-        }
-
-        .dot-purple {
-            background: #7c5cfc;
-            box-shadow: 0 0 8px rgba(124, 92, 252, 0.6);
-        }
-
-        .dot-orange {
-            background: var(--accent3);
-            box-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
-        }
-
-        /* ── CONTACT ── */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.25rem 1.5rem;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius);
-            text-decoration: none;
-            color: var(--text);
-            transition: border-color 0.2s, transform 0.2s;
-        }
-
-        .contact-card:hover {
-            border-color: rgba(0, 229, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .ci-github {
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .ci-linkedin {
-            background: rgba(10, 102, 194, 0.15);
-            border: 1px solid rgba(10, 102, 194, 0.3);
-        }
-
-        .ci-email {
-            background: rgba(0, 229, 255, 0.08);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        .ci-location {
-            background: rgba(255, 107, 53, 0.08);
-            border: 1px solid rgba(255, 107, 53, 0.2);
-        }
-
-        .contact-label {
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--muted);
-            letter-spacing: 0.1em;
-        }
-
-        .contact-value {
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-top: 2px;
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--muted);
-            border-top: 1px solid var(--border);
             position: relative;
             z-index: 1;
         }
 
-        /* ── ANIMATIONS ── */
-        @keyframes fadeUp {
+        .ext-icon-wrap {
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 122, 204, 0.25);
+            width: 90px;
+            height: 90px;
+        }
+
+        .ext-body {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .ext-eyebrow {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.3em;
+            color: var(--teal-light);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .ext-title {
+            font-family: var(--serif);
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: var(--ivory);
+            letter-spacing: 0.06em;
+            margin-bottom: 0.4rem;
+        }
+
+        .ext-title em {
+            font-style: normal;
+            color: var(--teal-light);
+        }
+
+        .ext-pub {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .ext-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .ext-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .ext-feat {
+            font-family: var(--mono);
+            font-size: 10px;
+            padding: 4px 12px;
+            border: 1px solid rgba(26, 170, 153, 0.25);
+            color: var(--teal-light);
+            background: rgba(13, 122, 110, 0.1);
+            letter-spacing: 0.08em;
+        }
+
+        .ext-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: rgba(0, 122, 204, 0.2);
+            border: 1px solid rgba(0, 122, 204, 0.5);
+            color: #5bc3ff;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.25s;
+        }
+
+        .ext-link:hover {
+            background: rgba(0, 122, 204, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* ─── STANDARDS & COMPLIANCE ─── */
+        .std-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1px;
+            background: var(--border-gold);
+            border: 1px solid var(--border-gold);
+        }
+
+        .std-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 1rem 1.25rem;
+            background: var(--bg2);
+            transition: background 0.2s;
+            cursor: default;
+        }
+
+        .std-item:hover {
+            background: rgba(26, 58, 92, 0.25);
+        }
+
+        .std-gem {
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+            box-shadow: 0 0 8px currentColor;
+        }
+
+        .gem-gold {
+            background: var(--gold);
+            color: var(--gold);
+        }
+
+        .gem-teal {
+            background: var(--teal-light);
+            color: var(--teal-light);
+        }
+
+        .gem-terra {
+            background: var(--terracotta-light);
+            color: var(--terracotta-light);
+        }
+
+        .std-text {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        /* ─── TOOLS MOSAIC ─── */
+        .tools-ring {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 1px;
+            background: var(--border-gold);
+            border: 1px solid var(--border-gold);
+        }
+
+        .tool-cell {
+            background: var(--bg2);
+            padding: 1.1rem 1rem;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .tool-cell:hover {
+            background: rgba(201, 146, 42, 0.06);
+        }
+
+        .tool-name {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+        }
+
+        .tool-type {
+            font-family: var(--mono);
+            font-size: 9px;
+            color: var(--text-dim);
+            letter-spacing: 0.1em;
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+
+        /* ─── EDUCATION ─── */
+        .edu-card {
+            border: 1px solid var(--border-gold);
+            background: rgba(26, 58, 92, 0.1);
+            padding: 2rem 2.5rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .edu-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20Z' fill='none' stroke='rgba(201,146,42,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .edu-emblem {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 146, 42, 0.2), rgba(201, 146, 42, 0.05));
+            border: 1px solid var(--border-gold-bright);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        .edu-emblem img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .edu-body {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .edu-degree {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            color: var(--ivory);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.2rem;
+        }
+
+        .edu-inst {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--teal-light);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.2rem;
+        }
+
+        .edu-meta {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--text-dim);
+            letter-spacing: 0.1em;
+        }
+
+        .edu-cgpa {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            margin-left: auto;
+            flex-shrink: 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .edu-cgpa span {
+            display: block;
+            font-family: var(--mono);
+            font-size: 9px;
+            color: var(--text-dim);
+            letter-spacing: 0.15em;
+            margin-top: 2px;
+        }
+
+        /* ─── CONTACT ─── */
+        #contact {
+            padding-bottom: 80px;
+        }
+
+        .contact-mosaic {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border-gold);
+            border: 1px solid var(--border-gold);
+        }
+
+        @media (max-width: 560px) {
+            .contact-mosaic {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-tile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.4rem 1.6rem;
+            background: var(--bg2);
+            text-decoration: none;
+            color: var(--text-main);
+            transition: background 0.2s;
+        }
+
+        .contact-tile:hover {
+            background: rgba(26, 58, 92, 0.3);
+        }
+
+        .contact-tile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .ci-gh {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ci-li {
+            background: rgba(10, 102, 194, 0.15);
+            border: 1px solid rgba(10, 102, 194, 0.3);
+        }
+
+        .ci-em {
+            background: rgba(201, 146, 42, 0.1);
+            border: 1px solid rgba(201, 146, 42, 0.25);
+        }
+
+        .ci-lo {
+            background: rgba(196, 90, 42, 0.1);
+            border: 1px solid rgba(196, 90, 42, 0.25);
+        }
+
+        .ci-lbl {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.18em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .ci-val {
+            font-family: var(--body);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .contact-tile:hover .ci-val {
+            color: var(--ivory);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid var(--border-gold);
+            position: relative;
+            z-index: 1;
+            background: var(--bg);
+        }
+
+        .footer-ornament {
+            color: var(--gold-dim);
+            font-size: 22px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5em;
+        }
+
+        .footer-text {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--text-dim);
+            letter-spacing: 0.15em;
+        }
+
+        .footer-text a {
+            color: var(--gold-dim);
+            text-decoration: none;
+        }
+
+        /* ─── SCROLL REVEAL ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-28px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes riseIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(22px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: none;
             }
         }
 
-        .reveal {
+        /* ─── MOBILE NAV HAMBURGER ─── */
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--gold-light);
+            transition: all 0.25s;
+        }
+
+        .nav-hamburger.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .nav-hamburger.open span:nth-child(2) {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.5s, transform 0.5s;
         }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .nav-hamburger.open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
         }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 640px) {
+        /* Mobile nav drawer */
+        .nav-drawer {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            z-index: 199;
+            background: rgba(7, 15, 26, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-gold);
+            padding: 1.5rem 2rem;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .nav-drawer.open {
+            display: flex;
+        }
+
+        .nav-drawer a {
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .nav-drawer a:last-child {
+            border-bottom: none;
+        }
+
+        .nav-drawer a:hover {
+            color: var(--gold-light);
+        }
+
+        @media (max-width: 768px) {
+
+            /* Nav */
             nav {
-                padding: 0 1rem;
+                padding: 0 1.25rem;
             }
 
             .nav-links {
-                gap: 1rem;
+                display: none;
             }
 
-            section {
-                padding: 80px 1.25rem;
+            .nav-hamburger {
+                display: flex;
             }
 
+            .nav-brand {
+                font-size: 12px;
+            }
+
+            .nav-brand span {
+                font-size: 10px;
+            }
+
+            /* Container */
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .hero-inner {
+                padding: 0 1.25rem;
+            }
+
+            /* Hero */
+            #hero {
+                padding-top: 90px;
+                min-height: auto;
+                padding-bottom: 3rem;
+            }
+
+            .arch-frame {
+                display: none;
+            }
+
+            .hero-kufic {
+                font-size: 10px;
+                letter-spacing: 0.2em;
+            }
+
+            .hero-name {
+                font-size: clamp(2.8rem, 12vw, 4rem);
+                letter-spacing: 0.03em;
+            }
+
+            .hero-title-bar {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .htbar-line {
+                display: none;
+            }
+
+            .hero-title-text {
+                font-size: 10px;
+            }
+
+            .hero-desc {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                gap: 0.75rem;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 10px;
+                clip-path: none;
+                border-radius: 3px;
+            }
+
+            .vscode-cta {
+                padding: 12px 16px;
+            }
+
+            .vscode-name {
+                font-size: 13px;
+            }
+
+            .vscode-sub {
+                font-size: 9px;
+            }
+
+            /* Stats */
             .hero-stats {
-                gap: 1.5rem;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--border-gold);
+                padding: 1rem 1.25rem;
+                text-align: left;
+                display: flex;
+                align-items: baseline;
+                gap: 0.75rem;
                 flex-wrap: wrap;
             }
 
-            .contact-grid {
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .stat-num {
+                font-size: 1.5rem;
+            }
+
+            .stat-lbl {
+                margin-top: 0;
+            }
+
+            /* Sections */
+            section {
+                padding: 70px 0;
+            }
+
+            .section-medallion {
+                margin-bottom: 2.5rem;
+            }
+
+            .medallion-title {
+                font-size: 1.7rem;
+            }
+
+            /* Skills */
+            .skills-mosaic {
                 grid-template-columns: 1fr;
+            }
+
+            .skill-tile {
+                padding: 1.2rem 1.25rem;
+            }
+
+            /* Experience */
+            .exp-arch-container::before {
+                left: 14px;
+            }
+
+            .exp-entry {
+                padding-left: 44px;
+                margin-bottom: 2.5rem;
+            }
+
+            .exp-node {
+                left: 0px;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .exp-role {
+                font-size: 1.05rem;
+            }
+
+            .sub-proj {
+                padding: 1rem 1.1rem;
+            }
+
+            .sub-proj-header {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .sub-bullets li {
+                font-size: 0.87rem;
+            }
+
+            /* Edu card */
+            .edu-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1.5rem 1.25rem;
+            }
+
+            .edu-cgpa {
+                margin: 0 auto;
+            }
+
+            /* Extension */
+            .ext-card {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .ext-inner {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .ext-icon-wrap {
+                width: 70px;
+                height: 70px;
+            }
+
+            .ext-icon-wrap img {
+                width: 70px !important;
+                height: 70px !important;
+            }
+
+            .ext-title {
+                font-size: 1.4rem;
+            }
+
+            /* Standards */
+            .std-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Tools */
+            .tools-ring {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Contact */
+            .contact-mosaic {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-tile {
+                padding: 1.1rem 1.25rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 2rem 1.25rem;
+            }
+
+            .footer-text {
+                font-size: 9px;
+                line-height: 1.8;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-name {
+                font-size: clamp(2.4rem, 14vw, 3.2rem);
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn {
+                width: fit-content;
+            }
+
+            .tools-ring {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ornament {
+                width: 260px !important;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="glow-1"></div>
-    <div class="glow-2"></div>
 
+    <!-- NAV -->
     <nav>
-        <span class="nav-logo">ash-faque.github.io</span>
+        <div class="nav-brand">
+            ASHFAQUE P P
+            <span>Automotive Software Engineer</span>
+        </div>
         <ul class="nav-links">
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#extension">Extension</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="nav-hamburger" id="hambtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+    <div class="nav-drawer" id="drawer">
+        <a href="#skills" onclick="closeDrawer()">Skills</a>
+        <a href="#experience" onclick="closeDrawer()">Experience</a>
+        <a href="#extension" onclick="closeDrawer()">Extension</a>
+        <a href="#contact" onclick="closeDrawer()">Contact</a>
+    </div>
 
     <main>
 
-        <!-- ── HERO ── -->
+        <!-- ══ HERO ══ -->
         <section id="hero">
-            <p class="hero-eyebrow">// software engineer · bangalore, india</p>
-            <h1 class="hero-name">Ashfaque<br><span>P P</span></h1>
-            <p class="hero-title">
-                Test Automation<span class="sep">×</span>Automotive Embedded<span class="sep">×</span>AUTOSAR
-            </p>
-            <p class="hero-desc">
-                3+ years building test frameworks and automation tooling for automotive ECUs at Tata Elxsi.
-                Specialising in AUTOSAR, SecOC, CAN/Automotive Ethernet, and diagnostic protocols.
-            </p>
-            <div class="hero-cta">
-                <a href="https://linkedin.com/in/ashfaque-pp" class="btn btn-primary" target="_blank">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/ash-faque" class="btn btn-ghost" target="_blank">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                    </svg>
-                    GitHub
-                </a>
-                <a href="mailto:ashfaqueppbtr@email.com" class="btn btn-ghost">
-                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                    </svg>
-                    Email
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div>
-                    <div class="stat-val">3<span>+</span></div>
-                    <div class="stat-label">years exp</div>
-                </div>
-                <div>
-                    <div class="stat-val">5<span>+</span></div>
-                    <div class="stat-label">protocols</div>
-                </div>
-                <div>
-                    <div class="stat-val">10<span>+</span></div>
-                    <div class="stat-label">tools & stacks</div>
-                </div>
-                <div>
-                    <div class="stat-val">BE</div>
-                    <div class="stat-label">mech. engineering</div>
-                </div>
-            </div>
-        </section>
+            <!-- Decorative arch SVG -->
+            <svg class="arch-frame" viewBox="0 0 420 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 560 L60 220 Q60 60 210 60 Q360 60 360 220 L360 560" stroke="rgba(201,146,42,1)"
+                    stroke-width="1.5" fill="none" />
+                <path d="M90 560 L90 230 Q90 100 210 100 Q330 100 330 230 L330 560" stroke="rgba(201,146,42,0.5)"
+                    stroke-width="0.75" fill="none" />
+                <circle cx="210" cy="60" r="30" stroke="rgba(201,146,42,0.8)" stroke-width="1" fill="none" />
+                <circle cx="210" cy="60" r="18" stroke="rgba(201,146,42,0.5)" stroke-width="0.75" fill="none" />
+                <path d="M195 60 L210 45 L225 60 L210 75Z" stroke="rgba(201,146,42,0.9)" stroke-width="1"
+                    fill="rgba(201,146,42,0.1)" />
+                <!-- Geometric star at arch top -->
+                <g transform="translate(210, 60)">
+                    <path d="M0,-22 L5,-8 L20,-8 L8,2 L13,16 L0,6 L-13,16 L-8,2 L-20,-8 L-5,-8Z"
+                        stroke="rgba(201,146,42,0.6)" stroke-width="0.75" fill="none" />
+                </g>
+                <!-- Side ornaments -->
+                <path d="M30 200 L60 200 M360 200 L390 200" stroke="rgba(201,146,42,0.4)" stroke-width="0.75" />
+                <path d="M20 300 L60 300 M360 300 L400 300" stroke="rgba(201,146,42,0.3)" stroke-width="0.75" />
+                <path d="M30 400 L60 400 M360 400 L390 400" stroke="rgba(201,146,42,0.2)" stroke-width="0.75" />
+                <!-- Muqarnas-inspired bottom detail -->
+                <path
+                    d="M60 480 L90 480 L90 520 L120 520 L120 480 L150 480 L150 530 L180 530 L180 480 L210 480 L210 530 L240 530 L240 480 L270 480 L270 530 L300 530 L300 480 L330 480 L330 520 L360 520 L360 480"
+                    stroke="rgba(201,146,42,0.35)" stroke-width="0.75" fill="none" />
+            </svg>
 
-        <!-- ── SKILLS ── -->
-        <section id="skills">
-            <div class="section-header reveal">
-                <span class="section-tag">01</span>
-                <h2 class="section-title">Skills</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="skills-grid reveal">
-                <div class="skill-card">
-                    <div class="skill-category">Languages</div>
-                    <div class="skill-tags">
-                        <span class="tag tag-accent">Python</span>
-                        <span class="tag tag-accent">C</span>
-                        <span class="tag tag-accent">C++</span>
-                        <span class="tag tag-accent">CAPL</span>
-                        <span class="tag">C#</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Embedded C</span>
-                    </div>
+            <div class="hero-inner">
+                <p class="hero-kufic">Automotive Software Engineer</p>
+                <h1 class="hero-name"><em>Ashfaque</em><br>P&nbsp;P</h1>
+                <div class="hero-title-bar">
+                    <div class="htbar-line"></div>
+                    <span class="hero-title-text">Test Automation</span>
+                    <span class="hero-title-sep">◆</span>
+                    <span class="hero-title-text">Diagnostics</span>
+                    <span class="hero-title-sep">◆</span>
+                    <span class="hero-title-text">Security</span>
+                    <div class="htbar-line" style="background:linear-gradient(90deg,transparent,var(--gold));"></div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-category">Test Frameworks</div>
-                    <div class="skill-tags">
-                        <span class="tag tag-purple">PyTest</span>
-                        <span class="tag tag-purple">Robot Framework</span>
-                        <span class="tag tag-purple">gTest / gMock</span>
-                        <span class="tag tag-purple">vTestStudio</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-category">Automotive Protocols</div>
-                    <div class="skill-tags">
-                        <span class="tag tag-orange">CAN / CAN FD</span>
-                        <span class="tag tag-orange">Automotive Ethernet</span>
-                        <span class="tag tag-orange">FlexRay</span>
-                        <span class="tag tag-orange">SOME/IP</span>
-                        <span class="tag tag-orange">DoIP</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-category">Standards & Security</div>
-                    <div class="skill-tags">
-                        <span class="tag tag-accent">AUTOSAR</span>
-                        <span class="tag tag-accent">UDS ISO-14229</span>
-                        <span class="tag tag-accent">SecOC</span>
-                        <span class="tag tag-accent">ISO 21434</span>
-                        <span class="tag">X.509 / PKI</span>
-                        <span class="tag">ASPICE SWE.4/6</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-category">Tools & Platforms</div>
-                    <div class="skill-tags">
-                        <span class="tag">CANoe</span>
-                        <span class="tag">CANalyzer</span>
-                        <span class="tag">GitLab CI</span>
-                        <span class="tag">Dear ImGui</span>
-                        <span class="tag">PyQt</span>
-                        <span class="tag">pugixml</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-category">Concepts</div>
-                    <div class="skill-tags">
-                        <span class="tag">HIL / SIL Testing</span>
-                        <span class="tag">ARXML Parsing</span>
-                        <span class="tag">ASN.1 / DER</span>
-                        <span class="tag">CI / CD</span>
-                        <span class="tag">White-box Testing</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── EXPERIENCE ── -->
-        <section id="experience">
-            <div class="section-header reveal">
-                <span class="section-tag">02</span>
-                <h2 class="section-title">Experience</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="exp-timeline reveal">
-                <div class="exp-item">
-                    <div class="exp-date">2022 — present</div>
-                    <div class="exp-role">Test Automation Engineer</div>
-                    <div class="exp-company">Tata Elxsi · Whitefield, Bangalore</div>
-                    <ul class="exp-bullets">
-                        <li>Developed and maintained CAPL test cases for automotive ECU validation covering SecOC key
-                            distribution, UDS diagnostic routines (RIDs/DIDs), and AUTOSAR SWC interfaces.</li>
-                        <li>Built a Python CANoe XML-to-HTML report converter with collapsible sections, dark theme, and
-                            pass/fail filtering — replacing a broken XSLT pipeline.</li>
-                        <li>Engineered a C DLL graphing plugin for CANoe using Dear ImGui + ImPlot + OpenGL3, with a
-                            dedicated Win32 render thread and mutex-protected ring buffer.</li>
-                        <li>Implemented a no-heap C library for X.509 DER parsing (static ASN.1/X.690), exposed as a
-                            CAPL DLL for ECU certificate chain validation in automotive PKI contexts.</li>
-                        <li>Diagnosed SecOC freshness tick counter PDU transport patterns and container PDU filtering
-                            behaviour in CANoe; debugged ARXML parsing in C++ CANoe plugin via pugixml traversal.</li>
-                        <li>Authored ASPICE SWE.4/SWE.6 compliant test plans and contributed to ISO 21434 cybersecurity
-                            work products.</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-date">2018 — 2022</div>
-                    <div class="exp-role">B.E. Mechanical Engineering</div>
-                    <div class="exp-company">Government Engineering College, Wayanad</div>
-                    <ul class="exp-bullets">
-                        <li>Graduated with a foundation in engineering fundamentals — transitioned into automotive
-                            embedded software and test automation.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── PROJECTS ── -->
-        <section id="projects">
-            <div class="section-header reveal">
-                <span class="section-tag">03</span>
-                <h2 class="section-title">Projects & Achievements</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="projects-grid reveal">
-                <div class="project-card">
-                    <div class="project-icon">🔐</div>
-                    <div class="project-title">SecOC CAPL Test Suite</div>
-                    <div class="project-desc">End-to-end CAPL test cases for VSM SecOC key distribution covering RIDs
-                        0x0281/0x0282, DIDs, verification result codes, and negative test paths (chain-of-trust
-                        failures).</div>
-                    <div class="project-stack">
-                        <span class="tag tag-accent">CAPL</span>
-                        <span class="tag">CANoe</span>
-                        <span class="tag tag-orange">SecOC</span>
-                        <span class="tag tag-orange">UDS</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">📊</div>
-                    <div class="project-title">CANoe XML → HTML Reporter</div>
-                    <div class="project-desc">Standalone Python tool converting CANoe test report XML to an interactive
-                        dark-themed HTML page with collapsible test groups and live pass/fail filtering — no external
-                        dependencies.</div>
-                    <div class="project-stack">
-                        <span class="tag tag-accent">Python</span>
-                        <span class="tag">xml.etree</span>
-                        <span class="tag">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">📈</div>
-                    <div class="project-title">ImGui Signal Plotter DLL</div>
-                    <div class="project-desc">C DLL CANoe plugin rendering live automotive signal waveforms with Dear
-                        ImGui + ImPlot + OpenGL3. Dedicated Win32 render thread, mutex ring buffer, full Google Test
-                        suite.</div>
-                    <div class="project-stack">
-                        <span class="tag tag-accent">C</span>
-                        <span class="tag">Dear ImGui</span>
-                        <span class="tag">ImPlot</span>
-                        <span class="tag">gTest</span>
-                        <span class="tag">OpenGL3</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">🔏</div>
-                    <div class="project-title">X.509 DER Parser (No-heap C)</div>
-                    <div class="project-desc">Static ASN.1/X.690 DER parser using index-based pool — zero dynamic
-                        allocation. Exposed as CAPL DLL exposing Daimler/MB vendor extension fields for ECU certificate
-                        validation in vTestStudio.</div>
-                    <div class="project-stack">
-                        <span class="tag tag-accent">C</span>
-                        <span class="tag tag-orange">X.509</span>
-                        <span class="tag tag-orange">ASN.1</span>
-                        <span class="tag">CAPL DLL</span>
-                        <span class="tag">PKI</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">🧩</div>
-                    <div class="project-title">ARXML CANoe Plugin Debugger</div>
-                    <div class="project-desc">Traced bus_name/cluster_name mismatch in a C++ CANoe plugin's ARXML
-                        parsing logic (appInitArxml) via pugixml tree traversal, fixing ECU network topology binding
-                        failures.</div>
-                    <div class="project-stack">
-                        <span class="tag tag-accent">C++</span>
-                        <span class="tag">pugixml</span>
-                        <span class="tag tag-purple">AUTOSAR</span>
-                        <span class="tag">ARXML</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">🚗</div>
-                    <div class="project-title">AUTOSAR RTE & OS Testing</div>
-                    <div class="project-desc">White-box test development for AUTOSAR RTE APIs — Sender-Receiver,
-                        Client-Server, IRV, PIM interfaces — plus OS/WdgM integration testing using CANoe .NET
-                        scripting.</div>
-                    <div class="project-stack">
-                        <span class="tag tag-purple">AUTOSAR</span>
-                        <span class="tag tag-purple">RTE</span>
-                        <span class="tag">C#/.NET</span>
-                        <span class="tag">CANoe</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── STANDARDS ── -->
-        <section id="standards">
-            <div class="section-header reveal">
-                <span class="section-tag">04</span>
-                <h2 class="section-title">Standards & Compliance</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="standards-grid reveal">
-                <div class="standard-item"><span class="standard-dot dot-cyan"></span>ASPICE SWE.4 — Unit Testing</div>
-                <div class="standard-item"><span class="standard-dot dot-cyan"></span>ASPICE SWE.6 — Integration Testing
-                </div>
-                <div class="standard-item"><span class="standard-dot dot-orange"></span>ISO 21434 — Cybersecurity
-                    Engineering</div>
-                <div class="standard-item"><span class="standard-dot dot-purple"></span>UDS ISO-14229 — Diagnostic
-                    Protocol</div>
-                <div class="standard-item"><span class="standard-dot dot-cyan"></span>AUTOSAR Classic / SOME/IP</div>
-                <div class="standard-item"><span class="standard-dot dot-orange"></span>SecOC — Secure Onboard Comm.
-                </div>
-                <div class="standard-item"><span class="standard-dot dot-purple"></span>X.509 / ASN.1 PKI</div>
-                <div class="standard-item"><span class="standard-dot dot-cyan"></span>DoIP — Diagnostics over IP</div>
-            </div>
-        </section>
-
-        <!-- ── CONTACT ── -->
-        <section id="contact">
-            <div class="section-header reveal">
-                <span class="section-tag">05</span>
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="contact-grid reveal">
-                <a href="https://github.com/ash-faque" class="contact-card" target="_blank">
-                    <div class="contact-icon ci-github">
-                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="contact-label">Github</div>
-                        <div class="contact-value">ash-faque</div>
-                    </div>
-                </a>
-                <a href="https://linkedin.com/in/ashfaque-p-p" class="contact-card" target="_blank">
-                    <div class="contact-icon ci-linkedin">
-                        <svg width="18" height="18" fill="#0a66c2" viewBox="0 0 24 24">
+                <p class="hero-desc">
+                    Automotive Software Engineer at <strong>Tata Elxsi</strong>, specialising in test automation, ECU
+                    diagnostics,
+                    and embedded security validation. Expert in <strong>CAPL, Python, C#, C++</strong> — building
+                    frameworks
+                    that cut regression cycles and drive CI/CD pipelines at automotive production scale.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://www.linkedin.com/in/ashfaque-pp" class="btn btn-gold" target="_blank">
+                        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
-                    </div>
-                    <div>
-                        <div class="contact-label">LinkedIn</div>
-                        <div class="contact-value">Ashfaque P P</div>
-                    </div>
-                </a>
-                <a href="mailto:ashfaque.pp@example.com" class="contact-card">
-                    <div class="contact-icon ci-email">
-                        <svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="1.5"
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/ash-faque" class="btn btn-outline" target="_blank">
+                        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="mailto:ashfaqueppbtr@gmail.com" class="btn btn-outline">
+                        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                         </svg>
-                    </div>
-                    <div>
-                        <div class="contact-label">Email</div>
-                        <div class="contact-value">ashfaque.pp@example.com</div>
-                    </div>
-                </a>
-                <div class="contact-card" style="cursor: default;">
-                    <div class="contact-icon ci-location">
-                        <svg width="18" height="18" fill="none" stroke="var(--accent3)" stroke-width="1.5"
+                        Email
+                    </a>
+                    <a href="https://ash-faque.github.io" class="btn btn-outline">
+                        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3 12a8.959 8.959 0 01.284-2.253" />
                         </svg>
+                        Portfolio
+                    </a>
+                </div>
+
+                <!-- VS Code Extension CTA in hero -->
+                <a href="https://marketplace.visualstudio.com/items?itemName=ashfaque-pp.capl-formatter"
+                    class="vscode-cta" target="_blank">
+                    <div class="vscode-badge"
+                        style="background:none;padding:0;width:36px;height:36px;border-radius:6px;overflow:hidden;flex-shrink:0;">
+                        <img src="https://ashfaque-pp.gallerycdn.vsassets.io/extensions/ashfaque-pp/capl-formatter/0.0.3/1776582731079/Microsoft.VisualStudio.Services.Icons.Default"
+                            alt="CAPL Formatter" style="width:36px;height:36px;display:block;object-fit:cover;">
                     </div>
-                    <div>
-                        <div class="contact-label">Location</div>
-                        <div class="contact-value">Bangalore, India</div>
+                    <div class="vscode-info">
+                        <span class="vscode-label">Published Extension · VS Code Marketplace</span>
+                        <div class="vscode-name">CAPL Formatter</div>
+                        <div class="vscode-sub">Code formatting & linting for CAPL language · ashfaque-pp.capl-formatter
+                        </div>
                     </div>
+                    <span class="vscode-arrow">→</span>
+                </a>
+
+                <div class="hero-stats reveal">
+                    <div class="stat"><span class="stat-num">3<span class="stat-unit">+</span></span><span
+                            class="stat-lbl">Years at Tata Elxsi</span></div>
+                    <div class="stat"><span class="stat-num">4</span><span class="stat-lbl">Live Projects</span></div>
+                    <div class="stat"><span class="stat-num">1</span><span class="stat-lbl">Published VS Code
+                            Extension</span></div>
+                    <div class="stat"><span class="stat-num">5<span class="stat-unit">+</span></span><span
+                            class="stat-lbl">Automotive Protocols</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SKILLS ══ -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-medallion reveal">
+                    <span class="medallion-num">◆ 01 ◆</span>
+                    <h2 class="medallion-title">Technical <em>Mastery</em></h2>
+                    <div class="ornament" style="width:320px">
+                        <div class="ornament-line"></div><span class="ornament-center">❖</span>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+                <div class="skills-mosaic reveal">
+                    <div class="skill-tile tile-gold">
+                        <div class="tile-cat cat-gold">Languages</div>
+                        <div class="tags">
+                            <span class="tag tag-g">Python</span><span class="tag tag-g">CAPL</span>
+                            <span class="tag tag-g">C#</span><span class="tag tag-g">C++</span>
+                            <span class="tag tag-g">JavaScript</span><span class="tag tag-g">Bash</span>
+                            <span class="tag tag-g">GDScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-tile tile-teal">
+                        <div class="tile-cat cat-teal">Test Frameworks</div>
+                        <div class="tags">
+                            <span class="tag tag-t">PyTest</span><span class="tag tag-t">Robot Framework</span>
+                            <span class="tag tag-t">vTestStudio</span><span class="tag tag-t">gTest/gMock</span>
+                            <span class="tag tag-t">CAPL Scripting</span>
+                        </div>
+                    </div>
+                    <div class="skill-tile tile-terra">
+                        <div class="tile-cat cat-terra">Automotive Protocols</div>
+                        <div class="tags">
+                            <span class="tag tag-r">ISO 14229 (UDS)</span><span class="tag tag-r">CAN-FD</span>
+                            <span class="tag tag-r">DoIP</span><span class="tag tag-r">SOME/IP</span>
+                            <span class="tag tag-r">Automotive Ethernet</span><span class="tag tag-r">FlexRay</span>
+                        </div>
+                    </div>
+                    <div class="skill-tile tile-gold">
+                        <div class="tile-cat cat-gold">Security & Standards</div>
+                        <div class="tags">
+                            <span class="tag tag-g">SecOC</span><span class="tag tag-g">ISO 21434</span>
+                            <span class="tag tag-g">AUTOSAR</span><span class="tag tag-g">ASPICE SWE.4/6</span>
+                            <span class="tag tag-g">X.509 / PKI</span><span class="tag tag-g">ASN.1 DER</span>
+                        </div>
+                    </div>
+                    <div class="skill-tile tile-teal">
+                        <div class="tile-cat cat-teal">Tools & Platforms</div>
+                        <div class="tags">
+                            <span class="tag tag-t">Vector CANoe</span><span class="tag tag-t">CANalyzer</span>
+                            <span class="tag tag-t">Lauterbach Trace32</span><span class="tag tag-t">VT System</span>
+                            <span class="tag tag-t">IBM DOORS</span><span class="tag tag-t">Jira REST API</span>
+                            <span class="tag tag-t">VS Code</span>
+                        </div>
+                    </div>
+                    <div class="skill-tile tile-crimson">
+                        <div class="tile-cat cat-crimson">DevOps & Automation</div>
+                        <div class="tags">
+                            <span class="tag tag-c">GitLab CI/CD</span><span class="tag tag-c">Jenkins</span>
+                            <span class="tag tag-c">Git</span><span class="tag tag-c">HIL/SIL Testing</span>
+                            <span class="tag tag-c">Godot Engine</span><span class="tag tag-c">PyQt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ EXPERIENCE ══ -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-medallion reveal">
+                    <span class="medallion-num">◆ 02 ◆</span>
+                    <h2 class="medallion-title">Professional <em>Journey</em></h2>
+                    <div class="ornament" style="width:320px">
+                        <div class="ornament-line"></div><span class="ornament-center">❖</span>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+
+                <div class="exp-arch-container reveal-left">
+                    <div class="exp-entry">
+                        <div class="exp-node">
+                            <div class="exp-node-diamond"></div>
+                        </div>
+                        <div class="exp-header">
+                            <div>
+                                <div class="exp-period">Feb 2023 — Present</div>
+                                <div class="exp-role">Software QA Engineer</div>
+                            </div>
+                        </div>
+                        <div class="exp-company">Tata Elxsi · Whitefield, Bangalore</div>
+
+                        <div class="sub-projects">
+                            <!-- Project 1 -->
+                            <div class="sub-proj">
+                                <div class="sub-proj-header">
+                                    <span class="sub-proj-name">Automotive Security & Conformance (ISO 21434)</span>
+                                    <span class="sub-proj-period">Jan 2025 — Present</span>
+                                </div>
+                                <ul class="sub-bullets">
+                                    <li>Engineered a <strong>CAPL-based Fuzz Testing framework</strong> for verifying
+                                        Security Access (Seed &amp; Key) and sub-function parameters, ensuring 100%
+                                        compliance with OEM security specifications.</li>
+                                    <li>Developed a high-performance <strong>ODX-D &amp; ARXML parser</strong>
+                                        (Python/C#) to auto-generate test vectors, reducing test configuration time by
+                                        <span class="metric-badge">80%</span>
+                                    </li>
+                                    <li>Validated security conformance of <strong>SecOC, DTC Setting, KeyM, SEL,
+                                            IDSM</strong> on HIL achieving up to <span class="metric-badge">85%
+                                            confidence</span> with requirements.</li>
+                                    <li>Managed ASPICE-compliant traceability from Requirements (<strong>IBM
+                                            DOORS</strong>) to Test Cases (<strong>vTestStudio</strong>) across Agile
+                                        sprints.</li>
+                                </ul>
+                            </div>
+                            <!-- Project 2 -->
+                            <div class="sub-proj">
+                                <div class="sub-proj-header">
+                                    <span class="sub-proj-name">ECU Diagnostics & Flashing Automation</span>
+                                    <span class="sub-proj-period">Jul 2023 — Dec 2024</span>
+                                </div>
+                                <ul class="sub-bullets">
+                                    <li>Designed comprehensive <strong>vTestStudio scripts</strong> for ISO 14229 (UDS)
+                                        validation — CDD, DTC setting, and Snapshot Data analysis.</li>
+                                    <li>Automated the ECU Reprogramming (Flash Bootloader) sequence using
+                                        <strong>Lauterbach Trace32 + Python</strong>, integrated into GitLab pipeline
+                                        for nightly builds — manual effort reduced by <span
+                                            class="metric-badge">90%</span>
+                                    </li>
+                                    <li>Modified AUTOSAR stub functions and C-code hooks for <strong>Restbus
+                                            Simulation</strong>, enabling stable desk-bench testing before HIL
+                                        availability.</li>
+                                    <li>Implemented <strong>Robot Framework wrappers</strong> to parallelise diagnostic
+                                        checks across multiple variants, cutting regression cycle by <span
+                                            class="metric-badge">40%</span></li>
+                                </ul>
+                            </div>
+                            <!-- Project 3 -->
+                            <div class="sub-proj">
+                                <div class="sub-proj-header">
+                                    <span class="sub-proj-name">Internal Tools & DevOps Initiatives</span>
+                                    <span class="sub-proj-period">May 2024 — Present</span>
+                                </div>
+                                <ul class="sub-bullets">
+                                    <li>Built a <strong>PyQt-based Defect Management Tool</strong> integrating Jira REST
+                                        APIs, automating the ticket creation phase for test failures.</li>
+                                    <li>Developed a <strong>C# Log Parser</strong> for XML test reports, enabling
+                                        automated root cause analysis categorisation for failed test steps.</li>
+                                    <li>Created a custom <strong>VS Code Extension for CAPL</strong> — standardising
+                                        code formatting and linting across the team. <em>Published on VS Code
+                                            Marketplace.</em></li>
+                                </ul>
+                            </div>
+                            <!-- Project 4 -->
+                            <div class="sub-proj">
+                                <div class="sub-proj-header">
+                                    <span class="sub-proj-name">SIL Simulation Development</span>
+                                    <span class="sub-proj-period">Feb 2023 — Dec 2024</span>
+                                </div>
+                                <ul class="sub-bullets">
+                                    <li>Architected a <strong>3D Vehicle Physics Simulator (Godot Engine)</strong> to
+                                        generate synthetic sensor data for ADAS algorithm validation in a SIL
+                                        environment.</li>
+                                    <li>Implemented a <strong>TCP/IP to CAN Gateway (Python)</strong> feeding simulated
+                                        vehicle speed and steering signals into Vector CANoe via virtual channels.</li>
+                                    <li>Designed interactive <strong>CANoe Panels</strong> for real-time fault injection
+                                        and signal manipulation during open-loop simulations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education as timeline entry -->
+                    <div class="exp-entry">
+                        <div class="exp-node">
+                            <div class="exp-node-diamond"
+                                style="background:var(--teal-light);box-shadow:0 0 16px rgba(26,170,153,0.7)"></div>
+                        </div>
+                        <div class="exp-header">
+                            <div>
+                                <div class="exp-period">Jun 2018 — Jul 2022</div>
+                                <div class="exp-role">B.Tech · Mechanical Engineering</div>
+                            </div>
+                        </div>
+                        <div class="exp-company">APJ Abdul Kalam Technological University · Wayanad, Kerala</div>
+                        <div class="edu-card">
+                            <div class="edu-emblem">
+                                <a href="https://www.gecwyd.ac.in/" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://www.gecwyd.ac.in/wp-content/uploads/2017/01/cropped-logo.png" alt="">
+                                </a>
+                            </div>
+                            <div class="edu-body">
+                                <div class="edu-degree">Bachelor of Technology in Mechanical Engineering</div>
+                                <div class="edu-inst">Government Engineering College, Wayanad</div>
+                                <div class="edu-meta">APJ Abdul Kalam Technological University · Jun 2018 — Jul 2022
+                                </div>
+                            </div>
+                            <div class="edu-cgpa">7.2<span>/ 10 CGPA</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ VS CODE EXTENSION ══ -->
+        <section id="extension">
+            <div class="container">
+                <div class="section-medallion reveal">
+                    <span class="medallion-num">◆ 03 ◆</span>
+                    <h2 class="medallion-title">Open Source <em>Contribution</em></h2>
+                    <div class="ornament" style="width:320px">
+                        <div class="ornament-line"></div><span class="ornament-center">❖</span>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+                <div class="ext-card reveal">
+                    <div class="ext-inner">
+                        <div class="ext-icon-wrap">
+                            <img src="https://ashfaque-pp.gallerycdn.vsassets.io/extensions/ashfaque-pp/capl-formatter/0.0.3/1776582731079/Microsoft.VisualStudio.Services.Icons.Default"
+                                alt="CAPL Formatter icon"
+                                style="width:90px;height:90px;border-radius:12px;display:block;object-fit:cover;">
+                        </div>
+                        <div class="ext-body">
+                            <div class="ext-eyebrow">VS Code Marketplace · Published Extension</div>
+                            <div class="ext-title">CAPL <em>Formatter</em></div>
+                            <div class="ext-pub">Publisher: ashfaque-pp &nbsp;·&nbsp; ID: ashfaque-pp.capl-formatter
+                            </div>
+                            <div class="ext-desc">
+                                A VS Code extension that brings professional code formatting and linting to CAPL — the
+                                scripting language used in Vector CANoe for automotive network simulation.
+                                Built to standardise code style across teams, eliminate syntax errors at save-time, and
+                                bring modern IDE tooling to automotive test engineers.
+                            </div>
+                            <div class="ext-features">
+                                <span class="ext-feat">CAPL Syntax Support</span>
+                                <span class="ext-feat">Auto-Formatting</span>
+                                <span class="ext-feat">Linting Rules</span>
+                                <span class="ext-feat">Team Consistency</span>
+                            </div>
+                            <a href="https://marketplace.visualstudio.com/items?itemName=ashfaque-pp.capl-formatter"
+                                class="ext-link" target="_blank">
+                                <svg width="14" height="14" viewBox="0 0 100 100" fill="currentColor">
+                                    <path
+                                        d="M74.9 7.4L38.1 40.4 15.8 23.3 7.4 27.9v44.2l8.4 4.6 22.3-17.1 36.8 33 10.8-5.1V12.5zm0 66.6L45.1 50 74.9 25.8v48.2z" />
+                                </svg>
+                                View on VS Code Marketplace →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ STANDARDS ══ -->
+        <section id="standards" style="padding-top:60px;padding-bottom:60px;">
+            <div class="container">
+                <div class="section-medallion reveal">
+                    <span class="medallion-num">◆ 04 ◆</span>
+                    <h2 class="medallion-title">Standards & <em>Compliance</em></h2>
+                    <div class="ornament" style="width:320px">
+                        <div class="ornament-line"></div><span class="ornament-center">❖</span>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+                <div class="std-grid reveal">
+                    <div class="std-item">
+                        <div class="std-gem gem-gold"></div><span class="std-text">ASPICE SWE.6 — Software Qualification
+                            Test</span>
+                    </div>
+                    <div class="std-item">
+                        <div class="std-gem gem-terra"></div><span class="std-text">ISO 21434 — Cybersecurity
+                            Engineering</span>
+                    </div>
+                    <div class="std-item">
+                        <div class="std-gem gem-teal"></div><span class="std-text">UDS ISO-14229 — Diagnostic
+                            Protocol</span>
+                    </div>
+                    <div class="std-item">
+                        <div class="std-gem gem-gold"></div><span class="std-text">AUTOSAR Classic Architecture</span>
+                    </div>
+                    <div class="std-item">
+                        <div class="std-gem gem-terra"></div><span class="std-text">SecOC — Secure Onboard
+                            Communication</span>
+                    </div>
+                    <div class="std-item">
+                        <div class="std-gem gem-teal"></div><span class="std-text">X.509 / ASN.1 — PKI Certificate
+                            Validation</span>
+                    </div>
+                    <div class="std-item">
+                        <div class="std-gem gem-gold"></div><span class="std-text">DoIP — Diagnostics over IP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ CONTACT ══ -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-medallion reveal">
+                    <span class="medallion-num">◆ 05 ◆</span>
+                    <h2 class="medallion-title">Open to <em>Opportunities</em></h2>
+                    <div class="ornament" style="width:320px">
+                        <div class="ornament-line"></div><span class="ornament-center">❖</span>
+                        <div class="ornament-line"></div>
+                    </div>
+                    <p
+                        style="font-size:1rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;max-width:500px;">
+                        Available for senior automotive software and test automation roles. Based in Bangalore — open to
+                        relocation.
+                    </p>
+                </div>
+                <div class="contact-mosaic reveal">
+                    <a href="https://github.com/ash-faque" class="contact-tile" target="_blank">
+                        <div class="contact-tile-icon ci-gh">
+                            <svg width="20" height="20" fill="var(--text-muted)" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="ci-lbl">GitHub</div>
+                            <div class="ci-val">ash-faque</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ashfaque-pp" class="contact-tile" target="_blank">
+                        <div class="contact-tile-icon ci-li">
+                            <svg width="20" height="20" fill="#0a66c2" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="ci-lbl">LinkedIn</div>
+                            <div class="ci-val">ashfaque-pp</div>
+                        </div>
+                    </a>
+                    <a href="mailto:ashfaqueppbtr@gmail.com" class="contact-tile">
+                        <div class="contact-tile-icon ci-em">
+                            <svg width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="ci-lbl">Email</div>
+                            <div class="ci-val">ashfaqueppbtr@gmail.com</div>
+                        </div>
+                    </a>
+                    <a href="tel:+916282177960" class="contact-tile">
+                        <div class="contact-tile-icon ci-lo">
+                            <svg width="20" height="20" fill="none" stroke="var(--terracotta-light)" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="ci-lbl">Phone · Bangalore</div>
+                            <div class="ci-val">+91 62821 77960</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1074,19 +2148,37 @@
     </main>
 
     <footer>
-        <span style="color: var(--accent); font-family: var(--mono);">Ashfaque P P</span> · Test Automation Engineer ·
-        Built with HTML/CSS/JS
+        <div class="footer-ornament">◆ ❖ ◆</div>
+        <div class="footer-text">
+            Ashfaque P P &nbsp;·&nbsp; Automotive Software Engineer &nbsp;·&nbsp; Bangalore, India<br>
+            <a href="https://ash-faque.github.io">ash-faque.github.io</a>
+            &nbsp;·&nbsp;
+            <a href="https://marketplace.visualstudio.com/items?itemName=ashfaque-pp.capl-formatter">CAPL Formatter
+                Extension</a>
+        </div>
     </footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
+        const io = new IntersectionObserver((entries) => {
             entries.forEach((e, i) => {
                 if (e.isIntersecting) {
-                    setTimeout(() => e.target.classList.add('visible'), i * 80);
+                    setTimeout(() => e.target.classList.add('in'), i * 90);
                 }
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => io.observe(el));
+
+        // Hamburger
+        const hambtn = document.getElementById('hambtn');
+        const drawer = document.getElementById('drawer');
+        hambtn.addEventListener('click', () => {
+            hambtn.classList.toggle('open');
+            drawer.classList.toggle('open');
+        });
+        function closeDrawer() {
+            hambtn.classList.remove('open');
+            drawer.classList.remove('open');
+        }
     </script>
 </body>
 
